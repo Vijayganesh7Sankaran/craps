@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Blog</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+		<%= javascript_include_tag 'rails' %>
+		<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<style>
+			.well {
+				margin: 5px;
+			}
+			html, body {
+				height: 100%;
+			}
+			.container {
+				min-height: 100%;
+				margin-bottom: -130px;
+				position: relative;
+			}
+			.footer {
+				margin-top:4em;
+				height: 130px;
+				width: 80%;
+				text-align:center;
+				position: relative;
+				left:10%
+			}
+			.clearfooter {
+				height: 130px;
+				clear: both;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="container">
+			<%= yield %>
+			<div class="clearfooter"></div>
+		</div>
+		<div style="text-align: center;padding:4em;background-color:skyblue " class="footer">
+			Some footer Here
+		</div>
+	</body>
+</html>

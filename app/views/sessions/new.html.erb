@@ -1,0 +1,55 @@
+<div class="jumbotron">
+	<h2>Gamification project</h2>
+</div>
+<div style="" id="si" class="col-md-9 col-md-offset-2">
+	<h3> Revolutionizing the approach to quiz</h3>
+	<h3>Through gamification</h3>
+	<h3>Let's Get Started!</h3>
+	<div  style="margin-top:3em;padding-top: 2em;" class="well col-md-12" >
+		<div style="border-right:1px solid black" class="col-md-7">
+			<div class="col-md-offset-2">
+				<!--h3>Login</h3-->
+			</div>
+			<%= form_for :session, :url => login_path, :html=>{:class =>'col-md-10'} do |f| %>
+			<%= f.email_field :email, :placeholder=>'Email',class:'form-control' %>
+			<br />
+			<%= f.password_field :password,:placeholder=>'Password', class:'form-control' %>
+			<br />
+			<%= f.submit "Login", :class => 'col-md-offset-4 btn btn-submit' %>
+			<% end %>
+		</div>
+		<div class="col-md-5">
+			<div style="margin-top: 4em" class="col-md-offset-5">
+				<div id="signU" class="btn btn-primary">
+					Sign Up
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+<div class="signup">
+	</div>
+
+<script>
+	$(document).ready(function() {
+
+		//alert('hi');
+
+		$('#signU').click(function() {
+
+			alert('clicked');
+			$.ajax({
+				method : 'GET',
+				url : 'http://localhost:3000/signup'
+			}).done(function(data) {
+				alert("message saved " + data );
+				$('#si').css('display','none');
+				$('.signup').html($(data).find('div.main_content'));
+			});
+		});
+
+	}); 
+</script>

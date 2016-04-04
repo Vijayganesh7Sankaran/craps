@@ -1,0 +1,19 @@
+<div class="main_content">
+	<div class="well col-md-12">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-8 col-md-offset-1">
+				<%= form_for @user, :html => {:class => 'col-md-12'} do |f| %>
+				<%= f.text_field :firstname, class:'form-control', :placeholder => 'Firstname'  %>
+				<br />
+				<%= f.text_field :lastname, class:'form-control', :placeholder => 'Lastname'  %>
+				<br />
+				<%= f.text_field :email, class:'form-control', :placeholder => 'email'  %>
+				<br />
+				<%= f.password_field :password, class:'form-control', :placeholder => 'password' %>
+				<br />
+				<%= f.submit "Sign Me Up" , class:'col-md-offset-4 btn btn-submit' %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
